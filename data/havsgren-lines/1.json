@@ -1,0 +1,22 @@
+{
+  "providerId": "havsgren-lines",
+  "provider": "Havsgren Lines",
+  "version": 1,
+  "status": "retired",
+  "published": "2024-09-16",
+  "services": [
+    { "code": "HVL-ECO", "name": "Havsgren Economy", "transitDays": 5, "description": "Lowest price. Delivered on a scheduled route within five working days." },
+    { "code": "HVL-STD", "name": "Havsgren Standard", "transitDays": 2, "description": "Delivered within two working days." },
+    { "code": "HVL-NXT", "name": "Havsgren Next Day", "transitDays": 1, "description": "Delivered the next working day when collected before 17:00." }
+  ],
+  "trackingStatuses": [
+    { "code": "MANIFESTED", "description": "Shipment details received. The parcel hasn't been collected yet." },
+    { "code": "COLLECTED", "description": "Parcel collected from the sender." },
+    { "code": "AT_HUB", "description": "Parcel scanned at a Havsgren Lines hub." },
+    { "code": "IN_LINEHAUL", "description": "Parcel is travelling between hubs." },
+    { "code": "WITH_COURIER", "description": "Parcel is on the courier's vehicle for delivery today." },
+    { "code": "DELIVERED", "description": "Delivered to the recipient or a neighbour.", "final": true },
+    { "code": "ATTEMPT_FAILED", "description": "Delivery attempted but no one was available. Havsgren Lines tries again the next working day." },
+    { "code": "RETURNED_TO_SENDER", "description": "Parcel is on its way back to the sender.", "final": true }
+  ]
+}

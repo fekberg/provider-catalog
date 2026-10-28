@@ -1,0 +1,24 @@
+{
+  "providerId": "greyvall-couriers",
+  "provider": "Greyvall Couriers",
+  "version": 1,
+  "status": "current",
+  "published": "2026-08-24",
+  "services": [
+    { "code": "GRV-SAVER", "name": "Greyvall Saver", "transitDays": 4, "description": "Lowest price. Delivered within four working days." },
+    { "code": "GRV-STD", "name": "Greyvall Standard", "transitDays": 2, "description": "Delivered within two working days." },
+    { "code": "GRV-PRIO", "name": "Greyvall Priority", "transitDays": 1, "description": "Delivered the next working day when handed over before 16:00." }
+  ],
+  "trackingStatuses": [
+    { "code": "REGISTERED", "description": "Shipment registered. The parcel hasn't been handed over yet." },
+    { "code": "RECEIVED", "description": "Parcel handed over to Greyvall Couriers." },
+    { "code": "SORTED", "description": "Parcel sorted at a Greyvall terminal." },
+    { "code": "ON_ROUTE", "description": "Parcel is on its way to the recipient's area." },
+    { "code": "OUT_FOR_DELIVERY", "description": "Parcel is with the driver for delivery today." },
+    { "code": "DELIVERED", "description": "Delivered to the recipient.", "final": true },
+    { "code": "PARCEL_SHOP", "description": "Left at a Greyvall parcel shop near the recipient, who is notified and can pick it up within 14 days. Parcels that aren't picked up go back to the sender." },
+    { "code": "DELIVERY_FAILED", "description": "No one was available to receive the parcel. Greyvall tries again the next working day." },
+    { "code": "ON_HOLD", "description": "Parcel is held at the terminal, usually because the label is damaged." },
+    { "code": "RETURNING", "description": "Parcel is on its way back to the sender.", "final": true }
+  ]
+}

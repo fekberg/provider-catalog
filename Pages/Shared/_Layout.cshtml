@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] | Provider catalog</title>
+    <link rel="stylesheet" href="~/site.css" asp-append-version="true">
+</head>
+<body>
+    <header class="bar">
+        <div class="bar-inner">
+            <a class="brand" href="/">Provider catalog</a>
+            <span class="owner">Partnerships team</span>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <span class="signed-in">Signed in as @User.Identity.Name</span>
+            }
+        </div>
+    </header>
+    <main class="page">
+        @RenderBody()
+    </main>
+    <footer class="disclaimer">This demo uses fictional names and people. No affiliation with or endorsement by any real company</footer>
+</body>
+</html>

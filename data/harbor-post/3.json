@@ -1,0 +1,24 @@
+{
+  "providerId": "harbor-post",
+  "provider": "Harbor Post",
+  "version": 3,
+  "status": "current",
+  "published": "2025-11-10",
+  "services": [
+    { "code": "HP-ECO", "name": "Harbor Post Economy", "transitDays": 4, "description": "Delivered within four working days." },
+    { "code": "HP-PRI", "name": "Harbor Post Priority", "transitDays": 2, "description": "Delivered within two working days." },
+    { "code": "HP-EXP", "name": "Harbor Post Express", "transitDays": 1, "description": "Delivered the next working day." }
+  ],
+  "trackingStatuses": [
+    { "code": "PRE_ADVICE", "description": "Shipment announced. The parcel hasn't been handed over yet." },
+    { "code": "ACCEPTED", "description": "Parcel accepted at a Harbor Post terminal." },
+    { "code": "IN_TRANSIT", "description": "Parcel is travelling between terminals." },
+    { "code": "ARRIVED_AT_DEPOT", "description": "Parcel arrived at the local delivery depot." },
+    { "code": "OUT_FOR_DELIVERY", "description": "Parcel is out for delivery today." },
+    { "code": "DELIVERED", "description": "Delivered to the recipient.", "final": true },
+    { "code": "DELIVERED_TO_PICKUP_POINT", "description": "Delivered to a pickup point. Counts as delivered.", "final": true },
+    { "code": "NOT_DELIVERED", "description": "Delivery attempted but not completed." },
+    { "code": "HELD", "description": "Parcel is held at the depot." },
+    { "code": "RETURNED", "description": "Parcel is on its way back to the sender.", "final": true }
+  ]
+}

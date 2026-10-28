@@ -1,0 +1,37 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Providers";
+}
+
+<h1>Providers</h1>
+<p class="lede">Integration specs for every delivery provider we work with. Open a version to read its service and tracking codes.</p>
+
+<table class="list">
+    <thead>
+        <tr>
+            <th scope="col">Provider</th>
+            <th scope="col">Id</th>
+            <th scope="col">Versions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var provider in Model.Providers)
+        {
+            <tr>
+                <td class="provider-name">@provider.Name</td>
+                <td><code>@provider.Id</code></td>
+                <td>
+                    <div class="versions">
+                    @foreach (var version in provider.Versions.OrderByDescending(v => v.Version))
+                    {
+                        <a class="version version-@version.Status" asp-page="/Spec" asp-route-id="@provider.Id" asp-route-version="@version.Version">
+                            Version @version.Version <span>@version.Status</span>
+                        </a>
+                    }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

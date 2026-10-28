@@ -1,0 +1,277 @@
+:root {
+    --ink: #130f25;
+    --ink-soft: #585fa2;
+    --canvas: #ffffff;
+    --panel: #ebeff5;
+    --line: #e2e8f0;
+    --accent: #770ef7;
+    --done: #02e088;
+    --problem: #b9004b;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--accent);
+}
+
+code {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 0.86em;
+    background: var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+/* Header */
+
+.bar {
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+}
+
+.bar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.brand {
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+.owner,
+.signed-in {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+}
+
+.signed-in {
+    margin-left: auto;
+}
+
+/* Page */
+
+.page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 2rem;
+}
+
+.lede {
+    margin: 0.25rem 0 1.25rem;
+    color: var(--ink-soft);
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Provider list */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--line);
+    padding: 0.4rem 0.75rem 0.4rem 0;
+}
+
+td {
+    border-bottom: 1px solid var(--line);
+    padding: 0.4rem 0.75rem 0.4rem 0;
+    vertical-align: top;
+}
+
+.list td {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.provider-name {
+    font-weight: 600;
+}
+
+.versions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.version {
+    padding: 0.15rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.version span {
+    color: var(--ink-soft);
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.version-retired {
+    color: var(--ink-soft);
+}
+
+/* Spec */
+
+.spec-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--panel);
+}
+
+.badge-current {
+    background: color-mix(in srgb, var(--done) 20%, white);
+}
+
+.published {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+}
+
+.spec-id {
+    margin-left: auto;
+}
+
+.notice {
+    margin: 0 0 1rem;
+    padding: 0.5rem 0.75rem;
+    border-left: 4px solid var(--problem);
+    background: color-mix(in srgb, var(--problem) 8%, white);
+}
+
+.spec {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.codes td {
+    font-size: 0.92rem;
+}
+
+.number {
+    text-align: right;
+}
+
+.feedback {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.feedback strong {
+    margin-right: 0.35rem;
+}
+
+.spec section > h2 + table + h2 {
+    margin-top: 1.5rem;
+}
+
+/* Sign in */
+
+.sign-in {
+    max-width: 420px;
+    margin: 3rem auto;
+}
+
+.sign-in form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sign-in label {
+    font-weight: 600;
+}
+
+.sign-in input {
+    font: inherit;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.sign-in button {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    font: inherit;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.error {
+    margin: 0;
+    color: var(--problem);
+}
+
+@media (max-width: 900px) {
+    .spec {
+        grid-template-columns: 1fr;
+    }
+}
+
+.disclaimer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}

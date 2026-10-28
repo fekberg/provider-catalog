@@ -1,0 +1,21 @@
+@page "/sign-in"
+@model SignInModel
+@{
+    ViewData["Title"] = "Sign in";
+}
+
+<div class="sign-in">
+    <h1>Sign in</h1>
+    <p class="lede">Paste the access token you got from the partnerships team.</p>
+
+    <form method="post">
+        <label for="token">Access token</label>
+        <input id="token" name="Token" type="password" autocomplete="off" autofocus required>
+        @if (Model.Error is not null)
+        {
+            <p class="error" role="alert">@Model.Error</p>
+        }
+        <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl">
+        <button type="submit">Sign in</button>
+    </form>
+</div>

@@ -1,0 +1,79 @@
+@page "/providers/{id}/v{version:int}"
+@model SpecModel
+@{
+    var spec = Model.Spec;
+    ViewData["Title"] = $"{spec.Provider} version {spec.Version}";
+}
+
+<a class="back" href="/">All providers</a>
+
+<div class="spec-header">
+    <h1>@spec.Provider</h1>
+    <span class="badge badge-@spec.Status">Version @spec.Version, @spec.Status</span>
+    <span class="published">Published @spec.Published.ToString("d MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture)</span>
+    <code class="spec-id">@spec.ProviderId</code>
+</div>
+
+@if (spec.IsRetired && Model.Current is { } current)
+{
+    <p class="notice">This version is retired. Use <a asp-page="/Spec" asp-route-id="@spec.ProviderId" asp-route-version="@current">version @current</a> for new integrations.</p>
+}
+
+<div class="spec">
+    <section aria-labelledby="services">
+        <h2 id="services">Services</h2>
+        <table class="codes">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col" class="number">Transit days</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var service in spec.Services)
+                {
+                    <tr title="@service.Description">
+                        <td><code>@service.Code</code></td>
+                        <td>@service.Name</td>
+                        <td class="number">@service.TransitDays</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (Model.Feedback.Count > 0)
+        {
+            <h2>Feedback from teams</h2>
+            <ul class="feedback">
+                @foreach (var entry in Model.Feedback)
+                {
+                    <li><strong>@entry.From</strong> @entry.Message</li>
+                }
+            </ul>
+        }
+    </section>
+
+    <section aria-labelledby="tracking">
+        <h2 id="tracking">Tracking codes</h2>
+        <table class="codes">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var status in spec.TrackingStatuses)
+                {
+                    <tr>
+                        <td><code>@status.Code</code></td>
+                        <td>@status.Description</td>
+                        <td>@(status.Final ? "Yes" : "")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+</div>
